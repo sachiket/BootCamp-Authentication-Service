@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 
-/*
- * Name: CustomExceptionHandler
- * Description: Common exception handler for all the controllers.
- */
+
+/****************************************************************************************************************************************
+ * Class Name : CustomExceptionHandler <br>
+ * Description : Common exception handler for all the controllers. <br>
+ * 
+ ****************************************************************************************************************************************/
 @ControllerAdvice
 public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
 
@@ -30,10 +32,12 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
 	}
 	
 	
-	/*
-	 * Name: validationException
-	 * Description: This exception will be handled if user inputs are not valid.
-	 */
+	
+	/****************************************************************************************************************************************
+	 * Function Name : validationException <br>
+	 * Description : This exception will be handled if user inputs are not valid. <br>
+	 * 
+	 ****************************************************************************************************************************************/
 	@ExceptionHandler(ValidationException.class)
 	public final ResponseEntity<ErrorMessage> validationException(ValidationException ex){
 
@@ -47,10 +51,12 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
 	
 	
 	
-	/*
-	 * Name: validationException
-	 * Description: This exception will be handled if request comes with null values.
-	 */
+
+	/****************************************************************************************************************************************
+	 * Function Name : nullParameter <br>
+	 * Description : This exception will be handled if request comes with null values. <br>
+	 * 
+	 ****************************************************************************************************************************************/
 	@ExceptionHandler(NullParameterException.class)
 	public final ResponseEntity<ErrorMessage> nullParameter(NullParameterException ex){
 
@@ -63,10 +69,12 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
 	
 	
 	
-	/*
-	 * Name: validationException
-	 * Description: This exception will be handled if the requested user in not their in database.
-	 */
+
+	/****************************************************************************************************************************************
+	 * Function Name : userNotFoundException <br>
+	 * Description : This exception will be handled if the requested user in not their in database. <br>
+	 * 
+	 ****************************************************************************************************************************************/
 	@ExceptionHandler(UserNotFoundException.class)
 	public final ResponseEntity<ErrorMessage> userNotFoundException(UserNotFoundException ex){
 

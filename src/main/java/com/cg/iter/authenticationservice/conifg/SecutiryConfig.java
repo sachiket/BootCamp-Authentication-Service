@@ -19,13 +19,16 @@ import com.cg.iter.authenticationservice.filter.JwtFilter;
 import com.cg.iter.authenticationservice.service.UserDetailsServiceImpl;
 import com.cg.iter.authenticationservice.util.AuthEntryPointJwt;
 
-/*
- * Name: SecutiryConfig
- * Description: 1. Configure authentication manager builder to setup authentication.
- * 				2. Configure authentication manager to authenticate logged in user.
- * 				3. Configure PasswordEncoder to encode and decode password.
- * 				4. Configure Http security to authorize url request.
- */
+
+/****************************************************************************************************************************************
+ * Class Name : SecutiryConfig <br>
+ * Description : 1. Configure authentication manager builder to setup authentication.
+ * 				 2. Configure authentication manager to authenticate logged in user.
+ * 				 3. Configure PasswordEncoder to encode and decode password.
+ * 				 4. Configure Http security to authorize url request. <br>
+ * 
+
+ ****************************************************************************************************************************************/
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -64,7 +67,6 @@ public class SecutiryConfig extends WebSecurityConfigurerAdapter{
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 			.authorizeRequests()
 			.antMatchers("/app/auth/**").permitAll()
-			.antMatchers("/app/route/**").permitAll()
 			.antMatchers("/v2/**").permitAll()
 			.anyRequest().authenticated();
 		 
